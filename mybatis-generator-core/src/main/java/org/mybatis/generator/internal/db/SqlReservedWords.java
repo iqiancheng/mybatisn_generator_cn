@@ -16,6 +16,7 @@
 
 package org.mybatis.generator.internal.db;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -953,19 +954,13 @@ public class SqlReservedWords {
 
         RESERVED_WORDS = new HashSet<String>(words.length);
 
-        for (String word : words) {
-            RESERVED_WORDS.add(word);
-        }
+        Collections.addAll(RESERVED_WORDS, words);
     }
 
     public static boolean containsWord(String word) {
         boolean rc;
 
-        if (word == null) {
-            rc = false;
-        } else {
-            rc = RESERVED_WORDS.contains(word.toUpperCase());
-        }
+        rc = word != null && RESERVED_WORDS.contains(word.toUpperCase());
 
         return rc;
     }
