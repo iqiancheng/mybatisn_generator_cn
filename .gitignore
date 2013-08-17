@@ -33,3 +33,7 @@
 /core/mybatis-generator-systests-ibatis2-java5/.project
 /core/mybatis-generator-systests-ibatis2-java5/.settings
 /core/mybatis-generator-systests-ibatis2-java5/target
+
+.idea
+target
+*.iml
